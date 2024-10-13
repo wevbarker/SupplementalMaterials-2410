@@ -1,10 +1,12 @@
+[![arXiv](https://img.shields.io/badge/arXiv-2311.11790-b31b1b.svg)](https://arxiv.org/abs/2410.#####)
+
 # Supplemental Materials to arXiv:2410.#####
 
-W. Barker, B. Gladwyn and S. Zell 
+Will Barker, Benjamin Gladwyn and Sebastian Zell 
 
 ## How to use this supplement 
 
-The reader is assumed to have read arXiv:2410.##### in its entirety before using this supplement.
+The reader is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#####) in its entirety before using this supplement.
 
 ### Mukhanov-Sasaki integration and Press-Schechter formalism
 
@@ -31,4 +33,5 @@ The source file `PBH_GW.m` can equally well be run from the command line, using:
 ```console, bash
 [user@system SupplementalMaterials-2410]$ math -run < PBH_GW.m
 ```
-Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflects the intention to actually compute the spectra in an HPC environment (for which the command line is more appropriate). By setting `$Compute=False`, the script will instead load the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package 
+Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflects the intention to actually compute the spectra in an HPC environment (for which the command line is more appropriate). By setting `$Compute=False`, the script will instead load the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package, which 
+[GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.en.html)
