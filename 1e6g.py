@@ -5,8 +5,6 @@ c2 = 0.05
 c3 = 0.075
 phi0 = 0.01
 
-print("Hello, World!")
-
 # Paramaters to optimise xi
 h0 = 8.5 # Initial value for inflaton
 maxN = 97 # Maximum number of e-folds to calculate up to

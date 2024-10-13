@@ -5,14 +5,14 @@
 <<xAct`xPlain`;
 
 Title@"Gravitational wave integration";
-$Compute=True;
+$Compute=False;
 $TheProcessorCount=100;
 If[$Compute,
 	Unprotect@$ProcessorCount;$ProcessorCount=$TheProcessorCount;Protect@$ProcessorCount;
 	LaunchKernels[$ProcessorCount];
 ];
 
-AllNames={"1e6g","1e6g_lower","1e6g_upper","1e8g","1e8g_lower","1e8g_upper","1e9g","1e9g_lower","1e9g_upper"};
+AllNames={"1e6g","1e6g_lower","1e6g_upper","1e7g","1e7g_lower","1e7g_upper","1e8g","1e8g_lower","1e8g_upper","1e9g","1e9g_lower","1e9g_upper"};
 
 ProcessSpectrum[InputString_]:=Module[{},
 	Code@"First we import the data from the power spectrum file.";
@@ -84,6 +84,7 @@ ProcessSpectrum[InputString_]:=Module[{},
 	Comment@"Plot.";
 	Code[
 		Expr=ListLogLogPlot[Transpose[{conv*k1,h2OmegaGW2Sol}],Joined->True,AxesLabel->{"f/Hz","h2OmegaGW2(k)"},PlotLabel->"Log-LogPlotofOmegaGW2(k)",PlotRange->{Automatic,Automatic}];
+		Export[InputString<>"_GW.csv",Transpose[{conv*k1,h2OmegaGW2Sol}],"CSV"];
 	];
 	DisplayExpression@Expr;
 ];
