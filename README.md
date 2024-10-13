@@ -10,16 +10,16 @@ The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#
 
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
-This supplement contains for analyses for Model 2 in Table 1 in Section 4 of the manuscript, applied to four different PBH masses and, for each mass, to three variants of the Press-Schechter formalism. Each PBH mass is associated with the string `1e#g`, where `#` ranges from six to nine, and the syntax encodes the PBH mass in grams. This string may be followed by `_lower_`, `_center_` or `_upper_`, representing a lower bound, representative value and upper bound on stochastic GW production. These three variants are defined by specific choice of the critical threshold $\delta_c$ and window function $W(x)$ used in the Press-Schechter formalism: the details are explained in Section 3.3 of the manuscript, and the implementation can also be found in `PBH_MS.py`. Each analysis is begun by running the corresponding _Python_ script. For example, to run the lower bound on GW production for PBHs of mass $10^6$ grams, we use the following:
+This supplement contains for analyses for Model 2 in Table 1 in Section 4 of the manuscript, applied to four different PBH masses and, for each mass, to three variants of the Press-Schechter formalism. Each PBH mass is associated with the string `1e#g`, where `#` ranges from six to nine, and the syntax encodes the PBH mass in grams. In the names of the main _Python_ files, this string may be followed by `Lower`, nothing, or `Upper`, representing a lower bound, representative value and upper bound on stochastic GW production. These three variants are defined by specific choice of the critical threshold $\delta_c$ and window function $W(x)$ used in the Press-Schechter formalism: the details are explained in Section 3.3 of the manuscript, and the implementation can also be found in `PBH_MS.py`. Each analysis is begun by running the corresponding _Python_ script, which performs the automated parts of the tuning procedure presented in Figure 3 of Section 3 of the manuscript. For example, to run the lower bound on GW production for PBHs of mass $10^6$ grams, we use the following:
 ```console, bash
 [user@system SupplementalMaterials-2410]$ python3 1e6g_lower.py
 ```
 All such model scripts call the files `PBH_MS.py` and `radau.py`. The output files for this model are:
-- `1e6g_outputs.txt`: the spectral index, tensor-to-scalar ratio and e-folds to the end of inflation
-- `1e6g_PBHAbundance.txt`: dark matter fraction of PBHs as a function of PBH mass
-- `1e6g_PBHAbundance.pdf`: dark matter fraction of PBHs as a function of PBH mass
-- `1e6g_PowerSpectrum.txt`: primordial power spectrum as a function of wavenumber
-- `1e6g_PowerSpectrum.pdf`: primordial power spectrum as a function of wavenumber
+- `1e6g_lower_outputs.txt`: the spectral index, tensor-to-scalar ratio and e-folds to the end of inflation
+- `1e6g_lower_PBHAbundance.txt`: dark matter fraction of PBHs as a function of PBH mass
+- `1e6g_lower_PBHAbundance.pdf`: dark matter fraction of PBHs as a function of PBH mass
+- `1e6g_lower_PowerSpectrum.txt`: primordial power spectrum as a function of wavenumber
+- `1e6g_lower_PowerSpectrum.pdf`: primordial power spectrum as a function of wavenumber
 
 The computationally intensive part of the analysis is the integration of the Mukhanov-Sasaki equation. To accommodate the variable availability of computational resources, the script `PBH_MS.py` uses subprocesses to sample the power spectrum at a variable `M = 1000` points in $k$-space. Note that `M` can be adjusted: the pre-set value is suitable for researchers whose funding supports the basic HPC requirements of precision cosmology (we do not include job-scheduling scripts in this repository, since they are institution-specific). Consistent with the [_open science_ principle](https://horizoneuropencpportal.eu/sites/default/files/2023-04/task-3.6-open_science_brief.pdf), arbitrarily smaller values of `M` can be used for citizen-science projects on a personal computer (and for development purposes). Unavoidably, the accuracy of the resulting power spectrum and PBH abundance fractions will suffer at lower `M`.
 
