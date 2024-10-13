@@ -6,7 +6,7 @@ Will Barker, Benjamin Gladwyn and Sebastian Zell
 
 ## How to use this supplement 
 
-The reader is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#####) in its entirety before using this supplement.
+The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#####) in its entirety before using this supplement.
 
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
