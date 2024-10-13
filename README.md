@@ -27,7 +27,7 @@ The computationally intensive part of the analysis is the integration of the Muk
 
 Once the model scripts have been run, the stochastic GW spectra can be computed. The integration is performed using _Mathematica_, to avoid errors encountered when using _Python_: we posit that these errors would not be difficult to resolve with further development, allowing for a fully open-source pipeline. The _Mathematica_ notebook `PBH_GW.nb` records the outcome of this integration procedure, as produced by the one-line script: 
 ```mathematica
-Get@FileNameJoin[{NotebookDirectory[],"PBH_GW.m"}];
+In[1]:= Get@FileNameJoin[{NotebookDirectory[],"PBH_GW.m"}];
 ```
 The source file `PBH_GW.m` can equally well be run from the command line, using:
 ```console, bash
