@@ -18,7 +18,7 @@ If[$Compute,
 	LaunchKernels[$ProcessorCount];
 ];
 
-AllNames={"1e6g","1e6g_lower","1e6g_upper","1e7g","1e7g_lower","1e7g_upper","1e8g","1e8g_lower","1e8g_upper","1e9g","1e9g_lower","1e9g_upper"};
+AllNames={"1e8g_GaussianFitted","1e8g_GaussianFitted_d_1","1e8g_NewFitted","1e8g_NewFitted_n_4"};
 
 ProcessSpectrum[InputString_]:=Module[{},
 	Code@"First we import the data from the power spectrum file.";
