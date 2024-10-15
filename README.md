@@ -45,4 +45,4 @@ The remaining files in this repository pertain to the GW forecasts from fitted p
 
 ### System context
 
-The data in this repository were generated on combinations of Cascade Lake, Ice Lake, Sapphire Rapids and Threadripper CPUs, running either Rocky Linux 8 (a rebuild of RHEL8) and Arch Linux. All software packages and libraries used were fully current as of the submission date of the manuscript.
+The data in this repository were generated on combinations of Cascade Lake, Ice Lake, Sapphire Rapids and Threadripper CPUs, running either Rocky Linux 8 (a rebuild of RHEL8) and Arch Linux.
