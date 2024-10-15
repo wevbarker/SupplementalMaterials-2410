@@ -33,8 +33,12 @@ The source file `PBH_GW.m` can equally well be run from the command line, using:
 ```console, bash
 [user@system SupplementalMaterials-2410]$ math -run < PBH_GW.m
 ```
-Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflect the intention to actually _compute_ the spectra in an HPC environment (for which the command line is more appropriate). As with the main _Python_ model scripts, the integrals can be run on a personal computer with `$TheProcessorCount` set between (e.g.) four and eight. In this case, the line
+Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflect the intention to actually _compute_ the spectra in an HPC environment (for which the command line is more appropriate). As with the main _Python_ model scripts, the integrals can be run on a personal computer with the variable `$TheProcessorCount` set between (e.g.) four and eight. In this case, the line
 ```mathematica
 k1=10^Range[Log10[lowF/(conv)],Log10[highF/(conv)],(Log10[highF/(conv)]-Log10[lowF/(conv)])/1000];
 ```
-may need ammending, so that fewer frequencies are sampled. By setting `$Compute=False`, the script will instead _load_ the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package, an open-source contribution to _xAct_ which can be found at [this GitHub repository](https://github.com/wevbarker/xPlain). Note that the binary files are, in principle, architecture-dependent, and may not be compatible with all systems. For this reason we also include files such as `1e6g_lower_GW.csv`, which contain the same data in a human-readable format.
+may need ammending, so that fewer frequencies are sampled and the computation can take place in a reasonable wallclock time. By setting `$Compute=False`, the script will instead _load_ the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package, an open-source contribution to _xAct_ which can be found at [this GitHub repository](https://github.com/wevbarker/xPlain). Note that the binary files are, in principle, architecture-dependent, and may not be compatible with all systems. For this reason we also include files such as `1e6g_lower_GW.csv`, which contain the same data in a human-readable format.
+
+### Miscellaneous fitting scripts
+
+The remaining files in this repository pertain to the GW forecasts from fitted power spectra. We provide only the data associated with these spectra, rather than the fitting scripts that generate them. The GW forecasts are computed by `PBH_GW_fitted.m` and `PBH_GW_fitted.nb`, which have an analogous structure to the GW forecast scripts for the models.
