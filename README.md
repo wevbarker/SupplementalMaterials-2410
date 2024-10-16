@@ -53,7 +53,7 @@ The source file `PBH_GW.m` can equally well be run from the command line, using:
 ```console, bash
 [user@system SupplementalMaterials-2410]$ math -run < PBH_GW.m
 ```
-Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflect the intention to actually _compute_ the spectra in an HPC environment (for which the command line is more appropriate). As with the main _Python_ model scripts, the integrals can be run on a personal computer with the variable `$TheProcessorCount` set between (e.g.) four and eight. In this case, attention is drawn to line 70:
+Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` (lines 8 and 9) reflect the intention to actually _compute_ the spectra in an HPC environment (for which the command line is more appropriate). As with the main _Python_ model scripts, the integrals can be run on a personal computer with the variable `$TheProcessorCount` set between (e.g.) four and eight. In this case, attention is drawn to line 64:
 ```mathematica
 k1=10^Range[Log10[lowF/(conv)],Log10[highF/(conv)],(Log10[highF/(conv)]-Log10[lowF/(conv)])/1000];
 ```

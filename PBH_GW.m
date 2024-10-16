@@ -2,17 +2,11 @@
 (*  PBH_GW  *)
 (*==========*)
 
-(*Benjamin: you should activate the two lines below and remove the xPlain package. Let me know if this doesn't work. Note that you probably have four, six or eight cores on your laptop.*)
-(*
-Comment[Expr_]:=Expr;
-Code[Expr_]:=Expr;
-*)
-
 <<xAct`xPlain`;
 
 Title@"Gravitational wave integration";
-$Compute=False;
-$TheProcessorCount=70;
+$Compute=True;
+$TheProcessorCount=100;
 If[$Compute,
 	Unprotect@$ProcessorCount;$ProcessorCount=$TheProcessorCount;Protect@$ProcessorCount;
 	LaunchKernels[$ProcessorCount];
