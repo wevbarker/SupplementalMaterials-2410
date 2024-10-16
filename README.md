@@ -8,6 +8,14 @@ Will Barker, Benjamin Gladwyn and Sebastian Zell
 
 The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#####) in its entirety before using this supplement.
 
+## Software requirements
+
+The scripts in this repository were run using the following software versions:
+- _Python_ 3.12.6
+- _Mathematica_ 14.0.0.0
+- _xAct_ 1.2.0
+- _xPlain_ 0.0.0-developer
+
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
 This supplement contains analyses of the four models in Table 1 in Section 4 of the manuscript, corresponding to four different PBH masses and, for each mass, to three variants of the Press-Schechter formalism. Each PBH mass is associated with the string `1e#g`, where `#` ranges from six to nine, and the syntax encodes the PBH mass in grams. In the names of the main _Python_ files, this string may be followed by `Lower`, nothing, or `Upper`, representing a lower bound, representative value and upper bound on stochastic GW production. These three variants are defined by specific choices of the critical threshold $\delta_c$ and window function $W(x)$ used in the Press-Schechter formalism: the details are explained in Section 3.3 of the manuscript, and the implementation can also be verified by examination of `PBH_MS.py`. Each analysis is begun by running the corresponding _Python_ script, which performs the automated parts of the tuning procedure presented in Figure 3 of Section 3 of the manuscript. For example, to run the lower bound on GW production for PBHs of mass $10^6$ grams, we use the following:
