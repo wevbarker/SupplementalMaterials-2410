@@ -21,7 +21,11 @@ All such model scripts call the files `PBH_MS.py` and `radau.py`. The output fil
 - `1e6g_lower_PowerSpectrum.txt`: primordial power spectrum as a function of wavenumber
 - `1e6g_lower_PowerSpectrum.pdf`: plot of the above
 
-The computationally intensive part of the analysis is the integration of the Mukhanov-Sasaki equation. To accommodate the variable availability of computational resources, the script `PBH_MS.py` uses subprocesses to sample the power spectrum at a variable `M = 1000` points in $k$-space. Note that `M` can be adjusted: the pre-set value is suitable for researchers whose funding supports the basic HPC requirements of precision cosmology (we do not include job-scheduling scripts in this repository, since they are institution-specific). Consistent with the [_open science_ principle](https://horizoneuropencpportal.eu/sites/default/files/2023-04/task-3.6-open_science_brief.pdf), arbitrarily smaller values of `M` can be used for citizen-science projects on a personal computer (and for development purposes). Unavoidably, the accuracy of the resulting power spectrum and PBH abundance fractions will suffer at lower `M`, and the data products may no longer be science-grade.
+The computationally intensive part of the analysis is the integration of the Mukhanov-Sasaki equation. To accommodate the variable availability of computational resources, the script `PBH_MS.py` uses subprocesses to sample the power spectrum at a variable `M` points in $k$-space, where `M` is introduced at line 28:
+```python
+        self.M = 600
+```
+Note that `M` can be adjusted: the pre-set value of `600` is suitable for researchers whose funding supports the basic HPC requirements of precision cosmology (we do not include job-scheduling scripts in this repository, since they are institution-specific), and our conclusions remain unchanged with runs of up to `2000`. Consistent with the [_open science_ principle](https://horizoneuropencpportal.eu/sites/default/files/2023-04/task-3.6-open_science_brief.pdf), arbitrarily smaller values of `M` can be used for citizen-science projects on a personal computer (and for development purposes). Unavoidably, the accuracy of the resulting power spectrum and PBH abundance fractions will suffer at lower `M`, and the data products may no longer be science-grade.
 
 ### **Step 2:** Stochastic gravitational wave spectra
 
@@ -33,11 +37,11 @@ The source file `PBH_GW.m` can equally well be run from the command line, using:
 ```console, bash
 [user@system SupplementalMaterials-2410]$ math -run < PBH_GW.m
 ```
-Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflect the intention to actually _compute_ the spectra in an HPC environment (for which the command line is more appropriate). As with the main _Python_ model scripts, the integrals can be run on a personal computer with the variable `$TheProcessorCount` set between (e.g.) four and eight. In this case, the line
+Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount=100` reflect the intention to actually _compute_ the spectra in an HPC environment (for which the command line is more appropriate). As with the main _Python_ model scripts, the integrals can be run on a personal computer with the variable `$TheProcessorCount` set between (e.g.) four and eight. In this case, attention is drawn to line 70:
 ```mathematica
 k1=10^Range[Log10[lowF/(conv)],Log10[highF/(conv)],(Log10[highF/(conv)]-Log10[lowF/(conv)])/1000];
 ```
-may need ammending, so that fewer frequencies are sampled and the computation can take place in a reasonable wallclock time. By setting `$Compute=False`, the script will instead _load_ the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package, an open-source contribution to _xAct_ which can be found at [this GitHub repository](https://github.com/wevbarker/xPlain). Note also that the binary files are, in principle, architecture-dependent, and may not be compatible with all systems. For this reason we also include files such as `1e6g_lower_GW.csv`, which contain the same data in a human-readable format.
+The value `1000` may need ammending, so that fewer frequencies are sampled and the computation can take place in a reasonable wallclock time. By setting `$Compute=False`, the script will instead _load_ the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package, an open-source contribution to _xAct_ which can be found at [this GitHub repository](https://github.com/wevbarker/xPlain). Note also that the binary files are, in principle, architecture-dependent, and may not be compatible with all systems. For this reason we also include files such as `1e6g_lower_GW.csv`, which contain the same data in a human-readable format.
 
 ### Miscellaneous fitting scripts
 

@@ -25,6 +25,7 @@ class CosmologicalModel:
         self.k_list = None
         self.spectrum = None
         self.name = name
+        self.M = 600
 
     # Define the potential V(phi)
     def V_phi(self, phi, xi, lam):
@@ -364,10 +365,10 @@ class CosmologicalModel:
         z_interp = interp1d(NeArray, z, kind='linear')
 
         # Mukhanov Sasaki Equation
-        M = 600  # Points on graph
+        #M = 600  # Points on graph
 
         # Starting value of k   k_interp(NeCMB)
-        k_list = np.logspace(np.log10(k_interp(NeCMB)), np.log10(k_interp(Nend)), M)
+        k_list = np.logspace(np.log10(k_interp(NeCMB)), np.log10(k_interp(Nend)), self.M)
 
         # Will: extra lines here 
         self.data_dir = self.name+'WideData'
