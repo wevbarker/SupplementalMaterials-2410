@@ -11,10 +11,13 @@ The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#
 ## Software requirements
 
 The scripts in this repository were run using the following software versions:
-- _Python_ 3.12.6
+- _Python_ 3.12.6 of which libraries
+    - _numpy_ 2.0.1
+    - _scipy_ 1.14.1
 - _Mathematica_ 14.0.0.0
-- _xAct_ 1.2.0
-- _xPlain_ 0.0.0-developer
+- _xAct_ 1.2.0 of which packages
+    - _xPlain_ 0.0.0-developer
+Information is available on how to install _Python_ and _xAct_ from the developers' websites. Note that _xPlain_ is available at [this GitHub repository](https://github.com/wevbarker/xPlain).
 
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
