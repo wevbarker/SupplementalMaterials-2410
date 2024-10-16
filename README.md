@@ -18,7 +18,8 @@ The scripts in this repository were run using the following software versions:
 - _Mathematica_ 14.0.0.0
 - _xAct_ 1.2.0 of which packages
     - _xPlain_ 0.0.0-developer
-Information is available on how to install _Python_ and _xAct_ from the developers' websites. Note that _xPlain_ is available at [this GitHub repository](https://github.com/wevbarker/xPlain). The Python libraries can be installed with ```console, bash
+Information is available on how to install _Python_ and _xAct_ from the developers' websites. Note that _xPlain_ is available at [this GitHub repository](https://github.com/wevbarker/xPlain). The Python libraries can be installed with 
+```console, bash
 [user@system SupplementalMaterials-2410]$ pip install matplotlib
 ```, and analogously for numpy and scipy.
 
