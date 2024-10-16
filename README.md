@@ -12,12 +12,15 @@ The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#
 
 The scripts in this repository were run using the following software versions:
 - _Python_ 3.12.6 of which libraries
+    - _matplotlib_
     - _numpy_ 2.0.1
     - _scipy_ 1.14.1
 - _Mathematica_ 14.0.0.0
 - _xAct_ 1.2.0 of which packages
     - _xPlain_ 0.0.0-developer
-Information is available on how to install _Python_ and _xAct_ from the developers' websites. Note that _xPlain_ is available at [this GitHub repository](https://github.com/wevbarker/xPlain).
+Information is available on how to install _Python_ and _xAct_ from the developers' websites. Note that _xPlain_ is available at [this GitHub repository](https://github.com/wevbarker/xPlain). The Python libraries can be installed with ```console, bash
+[user@system SupplementalMaterials-2410]$ pip install matplotlib
+```, and analogously for numpy and scipy.
 
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
