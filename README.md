@@ -21,7 +21,8 @@ The scripts in this repository were run using the following software versions:
 Information is available on how to install _Python_ and _xAct_ from the developers' websites. Note that _xPlain_ is available at [this GitHub repository](https://github.com/wevbarker/xPlain). The Python libraries can be installed with 
 ```console, bash
 [user@system SupplementalMaterials-2410]$ pip install matplotlib
-```, and analogously for numpy and scipy.
+```
+, and analogously for numpy and scipy.
 
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
