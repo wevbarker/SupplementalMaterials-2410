@@ -6,7 +6,7 @@ Will Barker, Benjamin Gladwyn and Sebastian Zell
 
 ## How to use this supplement 
 
-The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.11948) in its entirety before using this supplement.
+The user is assumed to have read [arXiv:2410.11948](https://arxiv.org/abs/2410.11948) in its entirety before using this supplement.
 
 ## Software requirements
 
