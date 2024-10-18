@@ -45,7 +45,15 @@ Note that `M` can be adjusted: the pre-set value of `M = 600` is suitable for re
 
 ### **Step 2:** Stochastic gravitational wave spectra
 
-Once the model scripts have been run, the stochastic GW spectra can be computed. For expedience, the integration is performed using a _Wolfram Language_ script, simply to avoid numerical instabilities which we encountered when running our first-pass _Python_ implementation (which we do not include). We posit that these errors would not be difficult to resolve with further development, allowing for a fully open-source pipeline. The _Mathematica_ notebook `PBH_GW.nb` records the outcome of this integration procedure, as produced by the one-line script: 
+Once the model scripts have been run, the stochastic GW spectra can be computed. We provide code for the calculation in _MATLAB_, _Wolfram Language_ and _Python_. Performing the integration with _Wolfram Language_ or _Python_ results in numerical instabilities, with Python typically performing worse. We posit that these errors would not be difficult to resolve with further development, allowing for a fully open-source pipeline. 
+
+#### _MATLAB_ Implementation ####
+
+The _MATLAB_ script `MatlabGWCalculation.m` calculates the GW spectra for the 4 models and the bounds. The script `MatlabGWCalculation_FittedSpectra.m` calculates the GW spectra for the fitted power spectra. 
+
+#### _Mathematica_ Implementation ####
+
+The _Mathematica_ notebook `PBH_GW.nb` records the outcome of the GW integration procedure, as produced by the one-line script: 
 ```mathematica
 In[1]:= Get@FileNameJoin[{NotebookDirectory[],"PBH_GW.m"}];
 ```
@@ -58,6 +66,10 @@ Within `PBH_GW.m`, the global parameters `$Compute=True` and `$TheProcessorCount
 k1=10^Range[Log10[lowF/(conv)],Log10[highF/(conv)],(Log10[highF/(conv)]-Log10[lowF/(conv)])/1000];
 ```
 The value `1000` may need ammending, so that fewer frequencies are sampled and the computation can take place in a reasonable wallclock time. By setting `$Compute=False`, the script will instead _load_ the pre-computed spectra from binaries such as `1e6g_lower_GW.mx` and plot them (evidently, the notebook is more suitable in this case). Note that the script requires the _xPlain_ package, an open-source contribution to _xAct_ which can be found at [this GitHub repository](https://github.com/wevbarker/xPlain). Note also that the binary files are, in principle, architecture-dependent, and may not be compatible with all systems. For this reason we also include files such as `1e6g_lower_GW.csv`, which contain the same data in a human-readable format, and which are produced from the binaries by running with `$Compute=False`.
+
+#### _Python_ Implementation ####
+
+The script `PythonGWCalcluation.py` demonstrates the code used to calculate GW signatures in Python. The use of `scipy.integrate.nquad` results in a numerical instabilities at low frequencies.
 
 ### Miscellaneous fitting scripts
 
