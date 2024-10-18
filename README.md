@@ -1,12 +1,12 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2311.11790-b31b1b.svg)](https://arxiv.org/abs/2410.#####)
+[![arXiv](https://img.shields.io/badge/arXiv-2311.11790-b31b1b.svg)](https://arxiv.org/abs/2410.11948)
 
-# Supplemental Materials to arXiv:2410.#####
+# Supplemental Materials to arXiv:2410.11948
 
 Will Barker, Benjamin Gladwyn and Sebastian Zell 
 
 ## How to use this supplement 
 
-The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.#####) in its entirety before using this supplement.
+The user is assumed to have read [arXiv:2410.#####](https://arxiv.org/abs/2410.11948) in its entirety before using this supplement.
 
 ## Software requirements
 
