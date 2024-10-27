@@ -24,6 +24,10 @@ Information is available on how to install _Python_ and _xAct_ from the develope
 ```
 , and analogously for numpy and scipy.
 
+### System context
+
+The data in this repository were generated on combinations of Cascade Lake, Ice Lake, Sapphire Rapids and Threadripper CPUs, running either Rocky Linux 8 (a rebuild of RHEL8) or Arch Linux.
+
 ### **Step 1:** Mukhanov-Sasaki integration and Press-Schechter formalism
 
 This supplement contains analyses of the four models in Table 1 in Section 4 of the manuscript, corresponding to four different PBH masses and, for each mass, to three variants of the Press-Schechter formalism. Each PBH mass is associated with the string `1e#g`, where `#` ranges from six to nine, and the syntax encodes the PBH mass in grams. In the names of the main _Python_ files, this string may be followed by `Lower`, nothing, or `Upper`, representing a lower bound, representative value and upper bound on stochastic GW production. These three variants are defined by specific choices of the critical threshold $\delta_c$ and window function $W(x)$ used in the Press-Schechter formalism: the details are explained in Section 3.3 of the manuscript, and the implementation can also be verified by examination of `PBH_MS.py`. Each analysis is begun by running the corresponding _Python_ script, which performs the automated parts of the tuning procedure presented in Figure 3 of Section 3 of the manuscript. For example, to run the lower bound on GW production for PBHs of mass $10^6$ grams, we use the following:
@@ -74,7 +78,3 @@ The script `PythonGWCalcluation.py` demonstrates the code used to calculate GW s
 ### Miscellaneous fitting scripts
 
 The remaining files in this repository pertain to the GW forecasts from fitted power spectra. We provide only the data associated with these spectra, rather than the fitting scripts that generate them (these can be made available upon request). The GW forecasts are computed by `PBH_GW_fitted.m` and `PBH_GW_fitted.nb`, which have an analogous structure to the GW forecast scripts for the models.
-
-### System context
-
-The data in this repository were generated on combinations of Cascade Lake, Ice Lake, Sapphire Rapids and Threadripper CPUs, running either Rocky Linux 8 (a rebuild of RHEL8) and Arch Linux.
